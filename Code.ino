@@ -1,10 +1,13 @@
-#define BLYNK_TEMPLATE_ID " "
+// =======================================================================
+// ===== KREDENSIAL BLYNK & WIFI =====
+// =======================================================================
+#define BLYNK_TEMPLATE_ID ""
 #define BLYNK_TEMPLATE_NAME " "
-#define BLYNK_AUTH_TOKEN " "
+#define BLYNK_AUTH_TOKEN ""
 
 char auth[] = BLYNK_AUTH_TOKEN;
-char ssid[] = " ";
-char pass[] = " ";
+char ssid[] = "";
+char pass[] = "";
 #include <WiFi.h>
 #include <BlynkSimpleEsp32.h>
 #include <Wire.h>
@@ -155,7 +158,7 @@ void updateRobotMovement() {
                     // Semua servo bergerak bersamaan seperti delay version
                     pca.setPWM(6, 0, angleToPulse(45)); 
                     pca.setPWM(7, 0, angleToPulse(130));
-                    pca.setPWM(0, 0, angleToPulse(160)); 
+                    pca.setPWM(0, 0, angleToPulse(157)); 
                     pca.setPWM(1, 0, angleToPulse(30));
                     prevMillisRobot = now; robotStep = 2;
                 } 
@@ -214,11 +217,11 @@ void updateRobotMovement() {
         }
     }
 
-    // ===== SECOND MODE =====
+    // ===== SECOND MODE (DUDUK) =====
     else if (currentCmd == 'E') {
       if (robotStep == 0) {
-          pca.setPWM(0, 0, angleToPulse(155)); pca.setPWM(1, 0, angleToPulse(20));
-          pca.setPWM(2, 0, angleToPulse(20)); pca.setPWM(3, 0, angleToPulse(155));
+          pca.setPWM(0, 0, angleToPulse(120)); pca.setPWM(1, 0, angleToPulse(60));
+          pca.setPWM(2, 0, angleToPulse(60)); pca.setPWM(3, 0, angleToPulse(120));
           pca.setPWM(4, 0, angleToPulse(155)); pca.setPWM(5, 0, angleToPulse(20));
           pca.setPWM(6, 0, angleToPulse(20)); pca.setPWM(7, 0, angleToPulse(155));
           robotStep = 1;
